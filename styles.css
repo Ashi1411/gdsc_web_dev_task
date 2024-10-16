@@ -1,0 +1,477 @@
+/* General styles */
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    /* 1rem = 10px */
+}
+:root {
+    --background-color: #293241; /* Dark Navy */
+    --block-color: #98c1d9; /* Light Blue */
+    --grid-color: #3d5a80; /* Dark Blue */
+    --content-color: #e0fbfc; /* Lightest Blue */
+    --accent-color: #ee6c4d; /* Orange for hover effects */
+    --black-color: #000;
+}
+
+body {
+    background-color: var(--background-color);
+    margin: 0;
+    padding-top: 6rem; /* Add padding to prevent content from being hidden under the navbar */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: "Poppins", sans-serif;
+}
+h2{
+    padding: 2rem;
+    font-size: 2.6rem;
+    color: var(--content-color);
+}
+p, li, a, label{
+    font-family: "Roboto", sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    color: var(--para-color);
+    line-height: 1.5;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.grid{
+    display: grid;
+}
+.grid-two--cols{
+    grid-template-columns: repeat(2, 1fr);
+}
+.grid-four--cols{
+    grid-template-columns: repeat(4, 1fr);
+}
+.profile-container, .tasks-container, .attendance-section, .meeting{
+    margin-top: 10rem;
+}
+/***** navbar *****/ 
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--grid-color); /* Dark Blue */
+    padding: 1.8rem 2.4rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure navbar stays on top of other content */
+}
+
+.navbar .logo a {
+    color: var(--content-color); /* Lightest Blue for logo text */
+    font-size: 2.2rem;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3.2rem;
+}
+
+.nav-links li a {
+    color: var(--content-color); /* Lightest Blue for links */
+    text-decoration: none;
+    font-size: 2rem;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--accent-color);
+}
+
+.navbar ul{
+    & li a {
+        text-transform: uppercase;
+        display: inline-block;
+        font-size: 1.6rem;
+        font-weight: 600;
+        position: relative;
+
+        &::after{
+            content: "";
+            position: absolute;
+            bottom:-0.3rem;
+            left: 0;
+            width: 0%;
+            border-bottom: 0.2rem solid var(--accent-color);
+            transition: all 0.3s linear;
+            -webkit-transition: all 0.3s linear;
+            -moz-transition: all 0.3s linear;
+            -ms-transition: all 0.3s linear;
+            -o-transition: all 0.3s linear;
+}
+    }
+
+    & li a:hover:after{
+        width: 100%;
+        color: var(--main-color);
+    }
+}
+/***** End navbar *****/
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 2.5rem;
+    height: 0.3rem;
+    background-color: var(--content-color); /* Lightest Blue */
+    margin: .3rem 0;
+    transition: all 0.3s;
+}
+
+
+
+/***** profile section *****/
+.profile-container {
+    /* flex-wrap: wrap; */
+    width: 80%;
+    background-color: var(--block-color);
+    padding: 2rem;
+    width: 100%;
+    border-radius: 1.5rem;
+    -webkit-border-radius: 1.5rem;
+    -moz-border-radius: 1.5rem; 
+    -ms-border-radius: 1.5rem;
+    -o-border-radius: 1.5rem;
+}
+
+.profile-container .grid{
+    align-items: center;
+    column-gap: 3.2rem;
+    row-gap: 1rem;
+}
+.contact-info .fa-brands, .contact-info .fa-solid{
+    font-size: 2rem;
+    padding: .2rem;
+}
+.contact-info .fa-solid{
+    rotate: -35deg;
+}
+/* Personal Details Section */
+.personal-details {
+    background-color: var(--grid-color);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+}
+
+/* Profile Image Section */
+.profile-image {
+    text-align: center;
+}
+
+.profile-image img {
+    width: 17rem;
+    height: auto;
+    border-radius: 50%;
+    border: .3rem solid #000; 
+}
+
+/* Occupational Info Section */
+.occupational-info {
+    background-color: var(--grid-color);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+/* Contact Info Section */
+.contact-info {
+    background-color: var(--grid-color);
+    padding: 1.5rem;
+    text-align: left;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.contact-info a {
+    color: var(--content-color); /* Lightest Blue for links */
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.personal-details, .occupational-info, .contact-info{
+    box-shadow: 0 .4rem .8rem rgba(0, 0, 0, 0.1);
+    color: var(--content-color);
+    border-radius: 1.5rem;
+    -webkit-border-radius: 1.5rem;
+    -moz-border-radius: 1.5rem;
+    -ms-border-radius: 1.5rem;
+    -o-border-radius: 1.5rem;
+}
+/***** End profile section *****/
+
+/***** tasks *****/
+.tasks-container {
+    color: var(--content-color);
+    display: block;
+
+    & .grid{
+        gap: 2rem;
+    }
+
+    & h2{
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+}
+
+.task-item {
+    margin-top: 2rem;
+    background-color: var(--block-color);
+    padding: 1.5rem;
+    box-shadow: 0 .2rem .4rem rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+
+    & h3{
+        font-weight: 800;
+        font-size: 2rem;
+        margin: 0 0 1rem 0;
+        color: var(--grid-color);
+    }
+    & p{
+        font-weight: 600;
+        margin: 0 0 1rem 0;
+        color: var(--grid-color);
+    }
+}
+
+
+.due-date {
+    font-size: 1.4rem;
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: .6rem 1rem;
+    /* font-size: 0.9rem; */
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+
+    &:hover{
+        background-color: #e4380d;
+    }
+}
+/***** End tasks *****/
+
+/***** Attendance Section *****/ 
+.chart-container {
+    width: 50%;
+    margin: 4rem auto;
+    background-color: #f0f8ff;
+    padding: 2rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+
+    & h3{
+        font-size: 1.8rem;
+    }
+}
+canvas {
+    margin: 1rem;
+}
+/***** End Attendance Section *****/
+
+/***** Upcoming meetings Section *****/ 
+.meeting-section {
+    width: 60%;
+    margin: 5rem auto;
+    padding: 2rem;
+    background-color: var(--block-color);
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    box-shadow: 0rem .4rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.meeting-section h3 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: var(--black-color);
+}
+
+.meeting-list {
+    margin-top: 2rem;
+}
+
+.meeting-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--grid-color);
+    padding: 1.5rem;
+    border-radius: .8rem;
+    -webkit-border-radius: .8rem;
+    -moz-border-radius: .8rem;
+    -ms-border-radius: .8rem;
+    -o-border-radius: .8rem;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s;
+}
+
+.meeting-card:hover {
+    background-color: #133d5f;
+}
+
+.meeting-info {
+    flex-grow: 1;
+}
+
+.meeting-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--content-color);
+}
+
+.meeting-date-time {
+    margin-top: .5rem;
+    color: var(--content-color);
+}
+
+.meeting-organizer {
+    font-style: italic;
+    color: var(--content-color);
+}
+/***** End Upcoming meetings Section *****/
+
+/***** Performance Section *****/ 
+/* Styling for the Employee Performance Dashboard */
+.performance-section {
+    width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--block-color);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.performance-section h2 {
+    text-align: center;
+    color: var(--black-color);
+    margin-bottom: 30px;
+}
+
+.charts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.chart-container {
+    width: 45%;
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--black-color);
+}
+
+canvas {
+    width: 100% !important;
+    height: 400px !important;
+}
+
+/***** End Performance Section *****/
+
+
+
+
+
+/* body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    -webkit-transition: background-color 0.3s, color 0.3s;
+    -moz-transition: background-color 0.3s, color 0.3s;
+    -ms-transition: background-color 0.3s, color 0.3s;
+    -o-transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    padding: 1rem 2rem;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+button {
+    padding: 1rem 1.5rem;
+    margin: 1.5rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+
+body.dark-mode {
+    background-color: #181818;
+    color: #e0e0e0;
+}
+
+header.dark-mode {
+    background-color: #242424;
+}
+
+button.dark-mode {
+    background-color: #333;
+    color: #ffffff;
+}
+ */
