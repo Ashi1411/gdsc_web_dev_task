@@ -15,7 +15,7 @@
         </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#profile">Attendance</a></li>
+            <li><a href="#attendance">Attendance</a></li>
             <li><a href="#reports">Projects</a></li>
             <li><a href="#reports">Progress</a></li>
             <li><a href="#settings">Apply Leave</a></li>
@@ -126,13 +126,12 @@
 <!-- ========== End upcoming meetings Section ========== -->
 
 <!-- ========== Start Performance Section ========== -->
-<section>
+<section class="performance">
     <h2>Performance</h2>
     <div class="performance-section">
-        <h2>Employee Performance Dashboard</h2>
-
         <div class="charts-container">
             <!-- Bar Chart for Task Completion -->
+             <div class="grid grid-three--cols">
             <div class="chart-container">
                 <h3>Task Completion</h3>
                 <canvas id="barChart"></canvas>
@@ -150,51 +149,55 @@
                 <canvas id="pieChart"></canvas>
             </div>
         </div>
+        </div>
     </div>
 </section>
 <!-- ========== End Performance Section ========== -->
 
 <!-- ========== Start Peer Comparsion Section ========== -->
-<section class="peer-comparison">
+<section class="comparison">
     <h2>Peer Comparison Dashboard</h2>
-
+    <div class="peer-comparison">
+    <div class="grid grid-three--cols">
     <!-- Performance Metrics -->
     <div class="chart-container">
-        <h3>Performance Metrics (Radar Chart)</h3>
+        <h3>Performance Metrics</h3>
         <canvas id="performanceMetricsChart"></canvas>
     </div>
 
     <!-- Peer Ranking and Benchmarking -->
     <div class="chart-container">
-        <h3>Peer Ranking and Benchmarking (Bar Chart)</h3>
+        <h3>Peer Ranking and Benchmarking</h3>
         <canvas id="peerRankingChart"></canvas>
     </div>
 
     <!-- Project Participation/Engagement -->
     <div class="chart-container">
-        <h3>Project Participation/Engagement (Polar Area Chart)</h3>
+        <h3>Project Participation/Engagement</h3>
         <canvas id="projectParticipationChart"></canvas>
     </div>
 
     <!-- Efficiency and Time Management -->
     <div class="chart-container">
-        <h3>Efficiency and Time Management (Line Chart)</h3>
+        <h3>Efficiency and Time Management</h3>
         <canvas id="timeManagementChart"></canvas>
     </div>
 
     <!-- Time Spent on Tasks -->
     <div class="chart-container">
-        <h3>Time Spent on Tasks (Stacked Bar Chart)</h3>
+        <h3>Time Spent on Tasks</h3>
         <canvas id="taskTimeChart"></canvas>
     </div>
-
+</div>
+</div>
 </section>
 <!-- ========== End Peer Comparsion Section ========== -->
 
 <!-- ========== Start Feedback Section ========== -->
-<section>
+<section class="feedback">
     <h2>Feedback Overview</h2>
     <div class="feedback-section">
+        <div class="grid grid-three--cols">
         <div class="chart-container">
             <h3>Average Rating Over Time</h3>
             <canvas id="rating"></canvas> <!-- Line chart for average rating -->
@@ -210,6 +213,7 @@
             <canvas id="sentimentPieChart"></canvas> <!-- Pie chart -->
         </div>
     </div>
+</div>
 </section>
 <!-- ========== End Feedback Section ========== -->
 

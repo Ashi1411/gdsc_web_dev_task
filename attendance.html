@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- ========== Start navbar ========== -->
+<nav class="navbar">
+    <div class="logo">
+        <a href="#">Dashboard</a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#attendance">Attendance</a></li>
+        <li><a href="#reports">Projects</a></li>
+        <li><a href="#reports">Progress</a></li>
+        <li><a href="#settings">Apply Leave</a></li>
+        <li><a href="#login">Login</a></li>
+        <!-- <button id="mode-toggle"><i class="fa-solid fa-toggle-on"></i></button> -->
+    </ul>
+    <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+<!-- ========== End navbar ========== -->
+
+<!-- ========== Start Attendance Section ========== -->
+<section class="attendance-section">
+    <h2>Attendance Overview</h2>
+    <div class="chart-container">
+        <h3>Attendance Overview</h3>
+        <canvas id="attendanceChart"></canvas>
+    </div>  
+</section>
+<!-- ========== End Attendance Section ========== -->
+
+
+
+
+
+<!-- ========== Start Footer Section ========== -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-about">
+            <h3>About Us</h3>
+            <p>Your company's mission or a brief description here.</p>
+            <ul class="social-icons">
+                <li><a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://linkedin.com"><i class="fa-brands fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    <div class="footer-bottom">
+        <p>© 2024 [Your Company Name]. All rights reserved.</p>
+        <a href="#" class="back-to-top">Back to Top</a>
+    </div>
+    </div>
+</footer>
+<!-- ========== End Footer Section ========== -->
+
+
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- External JS file -->
+<script src="attendance.js"></script>
+
+</body>
+</html>

@@ -67,7 +67,7 @@ li{
 .grid-four--cols{
     grid-template-columns: repeat(4, 1fr);
 }
-.profile-container, .tasks-container{
+.profile-container, .tasks-container, .performance, .comparison, .feedback{
     margin-top: 10rem;
     margin-left: auto;
     margin-right: auto;
@@ -383,16 +383,22 @@ canvas {
 /***** Performance Section *****/ 
 /* Styling for the Employee Performance Dashboard */
 .performance-section {
-    width: 90%;
-    margin: 3rem auto;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
     padding: 2rem;
-    background-color: var(--block-color);
+    /* background-color: var(--block-color); */
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
-    box-shadow: 0rem .4rem .8rem rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0rem .4rem .8rem rgba(0, 0, 0, 0.1); */
+
+    & .grid{
+
+        gap: 2rem;
+    }
 }
 
 .performance-section h2 {
@@ -408,7 +414,7 @@ canvas {
 }
 
 .performance-section .chart-container {
-    width: 45%;
+    /* width: 45%; */
     margin-bottom: 3rem;
     background-color: #fff;
     padding: 2rem;
@@ -478,15 +484,19 @@ button.dark-mode {
 /***** Peer Comparision Section *****/ 
 .peer-comparison {
     padding: 2rem;
-    max-width: 120rem;
+    width: 95%;
     margin: 0 auto;
-    background-color: var(--block-color);
+    /* background-color: var(--block-color); */
     border-radius: 1.2rem;
     -webkit-border-radius: 1.2rem;
     -moz-border-radius: 1.2rem;
     -ms-border-radius: 1.2rem;
     -o-border-radius: 1.2rem;
-    box-shadow: 0 .4rem 1.2rem rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 .4rem 1.2rem rgba(0, 0, 0, 0.1); */
+
+    & .grid{
+        gap: 2rem;
+    }
 }
 
 .peer-comparison h2 {
@@ -518,21 +528,24 @@ button.dark-mode {
 
 /***** Feedback Section *****/ 
 .feedback-section {
-    max-width: 80rem;
-    margin: 0 auto;
-    background: var(--block-color);
+    width: 95%;
+    /* background: var(--block-color); */
     border-radius: .8rem;
     -webkit-border-radius: .8rem;
     -moz-border-radius: .8rem;
     -ms-border-radius: .8rem;
     -o-border-radius: .8rem;
-    box-shadow: 0 .2rem 1rem rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 .2rem 1rem rgba(0, 0, 0, 0.1); */
     padding: 2rem;
+
+    & .grid{
+        gap: 2rem;
+    }
 }
 
 
 .chart-container {
-    margin: 2rem 0;
+    /* margin: 2rem 0; */
 }
 /***** End Feedback Section *****/
 
