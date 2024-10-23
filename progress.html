@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ========== Start navbar ========== -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">Dashboard</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="attendance.html">Attendance</a></li>
+            <li><a href="progress.html">Progress</a></li>
+            <li><a href="#reports">Projects</a></li>
+            <li><a href="#settings">Salary</a></li>
+            <li><a href="#login">Login</a></li>
+            <!-- <button id="mode-toggle"><i class="fa-solid fa-toggle-on"></i></button> -->
+        </ul>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+<!-- ========== End navbar ========== -->
+
+<!-- ========== Start sidebar Section ========== -->
+<div class="sidebar">
+    <ul class="sidebar-menu">
+        <li><a href="#task-completion">Task Completion Rate</a></li>
+        <li><a href="#project-progress">Project Progress</a></li>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#efficiency-and-skills">Efficiency and Skills</a></li>
+        <li><a href="#milestones-and-achievements">Milestones & Achievements</a></li>
+        <li><a href="#tasks">Tasks</a></li>
+        <li><a href="#feedback">Feedback Overview</a></li>
+    </ul>
+</div>
+<!-- ========== End sidebar Section ========== -->
+
+<!-- ========== Start Tasks Section ========== -->
+<section id="task-completion">
+    <div class="task">
+    <h2>Task Completion Rate</h2>
+    <!-- <div class="progress"> -->
+        <div class="grid grid-two--cols">
+        <div class="chart-container">
+            <h3>Task Completion</h3>
+            <canvas id="barChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h3>Task Completion Rate - October 2024</h3>
+            <canvas id="taskCompletionChart"></canvas>
+        </div>
+</div>
+<!-- </div> -->
+</div>
+</section>
+<!-- ========== End Tasks Section ========== -->
+
+<!-- ========== Start Project Progress - monthly and yearly Section ========== -->
+<section id="project-progress">
+    <div class="chart-wrapper">
+    <h2>Project Progress</h2>
+        <!-- Monthly Project Progress Doughnut Chart -->
+         <div class="grid grid-two--cols">
+        <div class="chart-container">
+            <h3>Project Progress - October 2024 (Monthly)</h3>
+            <canvas id="monthlyProjectProgressChart"></canvas>
+        </div>
+    
+        <!-- Yearly Project Progress Doughnut Chart -->
+        <div class="chart-container">
+            <h3>Project Progress - 2024 (Yearly)</h3>
+            <canvas id="yearlyProjectProgressChart"></canvas>
+        </div>
+    </div>
+</div>    
+</section>
+<!-- ========== End Project Progress - monthly and yearly Section ========== -->
+
+<!-- ========== Start Daily/Weekly/Monthly Goals Section ========== -->
+<section id="goals">
+    <div class="goals-container">
+        <h2>Daily, Weekly, and Monthly Goals</h2>
+        <div class="goal">
+        <!-- Daily Goals Progress -->
+        <div class="goal-section">
+            <h3>Daily Goals</h3>
+            <div class="progress-bar-container">
+                <span>Completed: <span id="dailyCompleted"></span>/5</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="dailyProgressFill"></div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Weekly Goals Progress -->
+        <div class="goal-section">
+            <h3>Weekly Goals</h3>
+            <div class="progress-bar-container">
+                <span>Completed: <span id="weeklyCompleted"></span>/10</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="weeklyProgressFill"></div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Monthly Goals Progress -->
+        <div class="goal-section">
+            <h3>Monthly Goals</h3>
+            <div class="progress-bar-container">
+                <span>Completed: <span id="monthlyCompleted"></span>/20</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="monthlyProgressFill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- ========== End Daily/Weekly/Monthly Goals Section ========== -->
+
+<!-- ========== Start Efficiency Rating and skill development Section ========== -->
+<section class="efficiency-skill" id="efficiency-and-skills">
+    <div class="grid grid-two--cols">
+<div class="efficiency">
+    <h2>Efficiency Rating</h2>
+    <div class="efficiency-container">
+        <div class="circular-progress">
+            <div class="inner-circle"></div>
+            <div class="outer-circle"></div>
+            <div class="percentage" id="efficiencyPercentage">0%</div>
+        </div>
+        
+        <p class="rating-label">Employee Efficiency</p>
+    </div>
+</div>
+
+<div class="skill">
+
+    <h2>Skill Distribution</h2>
+    <div class="chart-container">
+        <canvas id="pieChart"></canvas>
+    </div>
+</div>
+</div>
+</section>
+<!-- ========== End Skill Development and skill development Section ========== -->
+
+<!-- ========== Start Milestones & Achievements Section ========== -->
+<section class="milestone-achievements" id="milestones-and-achievements">
+    <h2>Milestones & Achievements</h2>
+    <div class="milestones-container">
+    
+        <!-- Completed Projects -->
+        <div class="milestone-item">
+            <div class="milestone-icon completed-projects-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="milestone-details">
+                <h3>Completed Projects</h3>
+                <p class="milestone-number" id="completedProjects">35</p>
+            </div>
+        </div>
+    
+        <!-- Awards & Recognition -->
+        <div class="milestone-item">
+            <div class="milestone-icon awards-icon">
+                <i class="fas fa-award"></i>
+            </div>
+            <div class="milestone-details">
+                <h3>Awards & Recognition</h3>
+                <p class="milestone-number" id="awardsRecognition">5</p>
+            </div>
+        </div>
+    
+        <!-- Years of Service -->
+        <div class="milestone-item">
+            <div class="milestone-icon service-icon">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="milestone-details">
+                <h3>Years of Service</h3>
+                <p class="milestone-number" id="yearsOfService">7</p>
+            </div>
+        </div>
+    </div>
+    
+</section>
+<!-- ========== End Milestones & Achievements Section ========== -->
+
+<!-- ========== Start user's tasks ========== -->
+<div class="progress-task" id="tasks">
+<section class="tasks-container">
+    <div>
+        <h2>Today's Tasks</h2>
+    </div>
+    <div class="container grid grid-four--cols">
+        <div class="task-item">
+            <h3>Task 1</h3>
+            <p>Description of Task 1</p>
+            <span class="due-date">Due: 12:00 PM</span>
+        </div>
+        <div class="task-item">
+            <h3>Task 2</h3>
+            <p>Description of Task 2</p>
+            <span class="due-date">Due: 3:00 PM</span>
+        </div>
+        <div class="task-item">
+            <h3>Task 3</h3>
+            <p>Description of Task 3</p>
+            <span class="due-date">Due: 5:00 PM</span>
+        </div>
+        <div class="task-item">
+            <h3>Task 4</h3>
+            <p>Description of Task 4</p>
+            <span class="due-date">Due: 6:00 PM</span>
+        </div>
+</div>
+</section>
+</div>
+<!-- ========== End user's tasks ========== -->
+
+<!-- ========== Start ongoing and upcoming tasksSection ========== -->
+<div class="progress-task">
+    <!-- Ongoing Tasks Section -->
+    <div class="tasks-section">
+        <h3>Ongoing Tasks</h3>
+        <div class="task-element">
+            <h4>Task 1: Design Employee Dashboard</h4>
+            <p>Due Date: 25th October 2024</p>
+            <p>Status: In Progress</p>
+        </div>
+        <div class="task-element">
+            <h4>Task 2: Backend API Development</h4>
+            <p>Due Date: 27th October 2024</p>
+            <p>Status: 50% Complete</p>
+        </div>
+        <!-- Add more ongoing tasks as needed -->
+    </div>
+
+    <!-- Upcoming Tasks Section -->
+    <div class="tasks-section">
+        <h3>Upcoming Tasks</h3>
+        <div class="task-element">
+            <h4>Task 1: Final Testing Phase</h4>
+            <p>Start Date: 28th October 2024</p>
+        </div>
+        <div class="task-element">
+            <h4>Task 2: Project Deployment</h4>
+            <p>Start Date: 30th October 2024</p>
+        </div>
+    </div>
+</div>
+<!-- ========== End ongoing and upcoming tasksSection ========== -->
+
+<!-- ========== Start Feedback Section ========== -->
+ <div class="progress-feedback" id="feedback">
+<section class="feedback">
+    <h2>Feedback Overview</h2>
+    <div class="feedback-section">
+        <div class="grid grid-two--cols">
+        <div class="chart-container">
+            <h3>Average Rating Over Time</h3>
+            <canvas id="rating"></canvas> <!-- Line chart for average rating -->
+        </div>
+
+        <div class="chart-container">
+            <h3>Rating Breakdown by Criteria</h3>
+            <canvas id="rating-breakdown"></canvas> <!-- Stacked bar chart -->
+        </div>
+
+        <div class="chart-container">
+            <h3>Sentiment Analysis of Feedback</h3>
+            <canvas id="sentimentPieChart"></canvas> <!-- Pie chart -->
+        </div>
+    </div>
+</div>
+</section>
+</div>
+<!-- ========== End Feedback Section ========== -->
+
+<!-- ========== Start Footer Section ========== -->
+<footer>
+    <div class="attendance-footer">
+    <div class="footer-content">
+        <div class="footer-about">
+            <h3>About Us</h3>
+            <p>Your company's mission or a brief description here.</p>
+            <ul class="social-icons">
+                <li><a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://linkedin.com"><i class="fa-brands fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    <div class="footer-bottom">
+        <p>© 2024 [Your Company Name]. All rights reserved.</p>
+        <a href="#" class="back-to-top">Back to Top</a>
+    </div>
+    </div>
+</div>
+</footer>
+<!-- ========== End Footer Section ========== -->
+
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/main.min.js"></script> -->
+
+<!-- External JS file -->
+<script src="progress.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="feedback.js"></script>
+</body>
+</html>

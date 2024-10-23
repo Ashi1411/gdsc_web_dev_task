@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="background-login">
+    <!-- ========== Start navbar ========== -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">Dashboard</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="attendance.html">Attendance</a></li>
+            <li><a href="progress.html">Progress</a></li>
+            <li><a href="#reports">Projects</a></li>
+            <li><a href="#settings">Salary</a></li>
+            <li><a href="login.html">Login</a></li>
+            <!-- <button id="mode-toggle"><i class="fa-solid fa-toggle-on"></i></button> -->
+        </ul>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+<!-- ========== End navbar ========== -->
+
+<!-- ========== Start Login Section ========== -->
+<section>
+    <div class="login-container">
+        <div class="login-form">
+            <h2>Employee Login</h2>
+            
+            <form action="/login" method="POST">
+                <!-- Email Field -->
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                
+                <!-- Password Field -->
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="input-group">
+                    <button type="submit">Login</button>
+                </div>
+                
+                <!-- Forgot Password Link -->
+                <div class="forgot-password">
+                    <a href="#">Forgot your password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</section>
+<!-- ========== End Login Section ========== -->
+
+<!-- ========== Start Footer Section ========== -->
+<footer class="login-page">
+    <div class="footer-content">
+        <div class="footer-about">
+            <h3>About Us</h3>
+            <p>Your company's mission or a brief description here.</p>
+            <ul class="social-icons">
+                <li><a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://linkedin.com"><i class="fa-brands fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    <div class="footer-bottom">
+        <p>© 2024 [Your Company Name]. All rights reserved.</p>
+        <a href="#" class="back-to-top">Back to Top</a>
+    </div>
+    </div>
+</footer>
+<!-- ========== End Footer Section ========== -->
+
+</body>
+</html>

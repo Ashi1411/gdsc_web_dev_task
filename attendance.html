@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attendance</title>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/main.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -14,11 +15,11 @@
         <a href="#">Dashboard</a>
     </div>
     <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#attendance">Attendance</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="attendance.html">Attendance</a></li>
+        <li><a href="progress.html">Progress</a></li>
         <li><a href="#reports">Projects</a></li>
-        <li><a href="#reports">Progress</a></li>
-        <li><a href="#settings">Apply Leave</a></li>
+        <li><a href="#settings">Salary</a></li>
         <li><a href="#login">Login</a></li>
         <!-- <button id="mode-toggle"><i class="fa-solid fa-toggle-on"></i></button> -->
     </ul>
@@ -30,22 +31,209 @@
 </nav>
 <!-- ========== End navbar ========== -->
 
-<!-- ========== Start Attendance Section ========== -->
-<section class="attendance-section">
-    <h2>Attendance Overview</h2>
-    <div class="chart-container">
-        <h3>Attendance Overview</h3>
-        <canvas id="attendanceChart"></canvas>
-    </div>  
+<!-- ========== Start sidebar Section ========== -->
+<div class="sidebar">
+    <ul class="sidebar-menu">
+        <li><a href="#past-attendance">Past Attendance Records</a></li>
+        <li><a href="#leave-summary">Leave Summary</a></li>
+        <li><a href="#apply-leave">Leave Application Form</a></li>
+        <li><a href="#attendance-correction">Attendance Correction Request Form</a></li>
+    </ul>
+</div>
+<!-- ========== End sidebar Section ========== -->
+
+<!-- ========== Start monthly and yearly attendance Section ========== -->
+    <main class="attendance-record" id="past-attendance">
+        <!-- Monthly Attendance Record Section -->
+         <div class="grid grid-two--cols">
+        <section id="monthly-record">
+            <h2>Monthly Attendance Record</h2>
+            <canvas id="monthlyAttendanceChart"></canvas>
+        </section>
+
+        <!-- Yearly Attendance Record Section -->
+        <section id="yearly-record">
+            <h2>Yearly Attendance Record</h2>
+            <canvas id="yearlyAttendanceChart"></canvas>
+        </section>
+
+        <!-- Attendance Summary Section -->
+        <!-- <section id="summary">
+            <h3>Attendance Summary</h3>
+            <table id="summary-table">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Present Days</th>
+                        <th>Absent Days</th>
+                        <th>Late Arrivals</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January</td>
+                        <td>20</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>18</td>
+                        <td>5</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section> -->
+    </div>
+    </main>
+<!-- ========== End monthly and yearly attendance Section ========== -->
+
+<!-- ========== Start hours, leaves and its distribution completed Section ========== -->
+<section class="hours-leaves" id="leave-summary">
+    <div class="grid grid-three--cols">
+    <div class="hours-worked">
+        <h2>Hours Completed</h2>
+        <div class="hours-completed">
+        <canvas id="doughnutChart" width="400" height="400"></canvas>
+        <div id="attendance-info">
+            <p>Hours Worked Today: <span id="hours-worked">8</span> hours</p>
+            <p>Remaining Hours: <span id="remaining-hours">0</span> hours</p>
+        </div>
+    </div>
+</div>
+
+<div>
+<h2 class="leave-summary">Employee Leaves Summary</h2>
+    <div class="leaves">
+    <div class="leave-card">
+        <h2>Monthly Leaves</h2>
+        <div class="leave-details">
+            <p>Total Monthly Leaves: <span>5</span></p>
+            <p>Leaves Taken: <span id="monthly-taken">2</span></p>
+            <p>Leaves Left: <span id="monthly-left">3</span></p>
+        </div>
+    </div>
+    
+    <div class="leave-card">
+        <h2>Yearly Leaves</h2>
+        <div class="leave-details">
+            <p>Total Yearly Leaves: <span>60</span></p>
+            <p>Leaves Taken: <span id="yearly-taken">12</span></p>
+            <p>Leaves Left: <span id="yearly-left">48</span></p>
+        </div>
+    </div>
+</div>
+</div>
+
+<div>
+<h2 class="leave-summary">Leave Distribution</h2>
+    <div class="leave-distribution">
+        <canvas id="leaveDistributionChart" width="400" height="400"></canvas>
+    </div>
+</div>
+</div>
 </section>
-<!-- ========== End Attendance Section ========== -->
+<!-- ========== End hours, leaves and its distribution completed Section ========== -->
 
 
+<!-- <section>
+    <div class="calander">
+        <h1>Employee Attendance</h1>
+        <div id="attendanceCalendar"></div>
+    </div>
+</section> -->
 
+<!-- ========== Start leave application Section ========== -->
+<div class="leave-apply" id="apply-leave">
+    <h2>Leave Application Form</h2>
+    <form class="leaveForm" action="https://formspree.io/f/mgvevvon"
+    method="POST">
+        <div class="form-group">
+            <label for="employeeName">Employee Name:</label>
+            <input type="text" id="employeeName" name="employeeName" required>
+        </div>
 
+        <div class="form-group">
+            <label for="employeeId">Employee ID:</label>
+            <input type="text" id="employeeId" name="employeeId" required>
+        </div>
+
+        <div class="form-group">
+            <label for="leaveType">Leave Type:</label>
+            <select id="leaveType" name="leaveType" required>
+                <option value="">--Select Leave Type--</option>
+                <option value="casual">Casual Leave</option>
+                <option value="sick">Sick Leave</option>
+                <option value="half-day">Half-day</option>
+                <option value="vacation">Vacation Leave</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="leaveStart">Leave Start Date:</label>
+            <input type="date" id="leaveStart" name="leaveStart" required>
+        </div>
+
+        <div class="form-group">
+            <label for="leaveEnd">Leave End Date:</label>
+            <input type="date" id="leaveEnd" name="leaveEnd" required>
+        </div>
+
+        <div class="form-group">
+            <label for="reason">Reason for Leave:</label>
+            <textarea id="reason" name="reason" rows="4" required></textarea>
+        </div>
+
+        <button type="submit">Submit Application</button>
+    </form>
+</div>
+<!-- ========== End leave application Section ========== -->
+
+<!-- ========== Start Attendance Correction request Section ========== -->
+<div class="attendance-correction" id="attendance-correction">
+    <h2>Attendance Correction Request Form</h2>
+    <form id="correctionForm" method="post">
+        <div class="form-group">
+            <label for="employeeName">Employee Name:</label>
+            <input type="text" id="employeeName" name="employeeName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="employeeId">Employee ID:</label>
+            <input type="text" id="employeeId" name="employeeId" required>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Date of Attendance to Correct:</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="correctionType">Type of Correction:</label>
+            <select id="correctionType" name="correctionType" required>
+                <option value="">--Select Correction Type--</option>
+                <option value="missed-punch-in">Missed Punch-In</option>
+                <option value="missed-punch-out">Missed Punch-Out</option>
+                <option value="incorrect-hours">Incorrect Work Hours</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="reason">Reason for Correction:</label>
+            <textarea id="reason" name="reason" rows="4" required></textarea>
+        </div>
+
+        <button type="submit">Submit Request</button>
+    </form>
+</div>
+<!-- ========== End Attendance Correction request Section ========== -->
 
 <!-- ========== Start Footer Section ========== -->
 <footer>
+    <div class="attendance-footer">
     <div class="footer-content">
         <div class="footer-about">
             <h3>About Us</h3>
@@ -61,6 +249,7 @@
         <a href="#" class="back-to-top">Back to Top</a>
     </div>
     </div>
+</div>
 </footer>
 <!-- ========== End Footer Section ========== -->
 
@@ -68,9 +257,14 @@
 
 <!-- Chart.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/main.min.js"></script> -->
 
 <!-- External JS file -->
-<script src="attendance.js"></script>
+<script src="attendance1.js"></script>
+
+<!-- D3.js CDN -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
 
 </body>
 </html>
