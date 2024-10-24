@@ -142,3 +142,93 @@ var taskTimeChart = new Chart(ctx5, {
         }
     }
 });
+
+
+
+
+
+
+// script.js
+
+// Peer Comparison Radar Chart
+const ctx6 = document.getElementById('peerComparisonChart').getContext('2d');
+
+// Sample data for the radar chart (metrics comparison: task completion, efficiency, etc.)
+const data = {
+    labels: ['Task Completion', 'Efficiency', 'Attendance', 'Overtime', 'Collaboration'],
+    datasets: [
+        {
+            label: 'Employee',
+            data: [85, 80, 90, 70, 75],  // Employee's performance across metrics
+            backgroundColor: 'rgba(54, 162, 235, 0.4)',  // Light blue background
+            borderColor: 'rgba(54, 162, 235, 1)',        // Blue border
+            pointBackgroundColor: 'rgba(54, 162, 235, 1)', // Blue points
+        },
+        {
+            label: 'Peer 1',
+            data: [75, 85, 85, 60, 80],  // Peer 1's performance across metrics
+            backgroundColor: 'rgba(255, 99, 132, 0.4)',  // Light red background
+            borderColor: 'rgba(255, 99, 132, 1)',        // Red border
+            pointBackgroundColor: 'rgba(255, 99, 132, 1)', // Red points
+        },
+        {
+            label: 'Peer 2',
+            data: [80, 75, 88, 65, 85],  // Peer 2's performance
+            backgroundColor: 'rgba(75, 192, 192, 0.4)',  // Light green background
+            borderColor: 'rgba(75, 192, 192, 1)',        // Green border
+            pointBackgroundColor: 'rgba(75, 192, 192, 1)', // Green points
+        }
+    ]
+};
+
+// Radar chart configuration
+const config = {
+    type: 'radar',
+    data: data,
+    options: {
+        scales: {
+            r: {
+                beginAtZero: true,
+                max: 100  // Set maximum value for percentage-based data
+            }
+        },
+        plugins: {
+            legend: {
+                display: true,
+                position: 'top'
+            }
+        }
+    }
+};
+
+// Create the chart
+const peerComparisonChart = new Chart(ctx6, config);
+
+
+
+
+
+
+
+
+const employeeData = [
+    { name: "John Doe", metric1: 85, metric2: 90, metric3: 88, overallScore: 87.67 },
+    { name: "Jane Smith", metric1: 92, metric2: 86, metric3: 95, overallScore: 91.00 },
+    // Add more employee data here
+  ];
+  
+  const comparisonTable = document.querySelector('.comparison-table table tbody');
+  
+  employeeData.forEach(employee => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${employee.name}</td>
+      <td>${employee.metric1}</td>
+      <td>${employee.metric2}</td>
+      <td>${employee.metric3}</td>
+      <td>${employee.overallScore}</td>
+    `;
+    comparisonTable.appendChild(row);
+  });
+
+

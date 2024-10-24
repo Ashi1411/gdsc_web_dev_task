@@ -6,6 +6,149 @@
     <title>Progress</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        @media (width <= 1400px){
+            html{
+                font-size: 50%;
+                /* 1rem = 8.64px */
+            } 
+        }
+        
+        @media (max-width: 1210px) {
+            html {
+                font-size: 45%;
+            }
+            .attendance-record, .hours-leaves, .leave-apply, .attendance-correction {
+                margin-left: 15rem;
+                padding: 1rem;
+            }
+            /* .grid-two--cols {
+                grid-template-columns: 1fr;
+            } */
+            .grid-three--cols {
+                grid-template-columns: 1fr;
+            }
+            .hours-worked{
+                margin-left: 0rem;
+            }
+        }
+        
+        
+        @media (max-width:1080px) {
+            html {
+                font-size: 38%;
+            }
+        }
+        
+        @media (max-width:900px) {
+            html {
+                font-size: 34%;
+            }
+        }
+        @media (max-width: 890px) {
+            html {
+                font-size:36%;
+            }
+            .navbar {
+                padding: 1rem;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 4rem;
+                right: 0;
+                background-color: #000;
+                width: 100%;
+                padding: 1rem;
+            }
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            .task-completion, .project-progress, .goals {
+                margin-left: -20rem;
+                padding: 1rem;
+            }
+            .efficiency-skill, .milestone-achievements, .progress-task, .progress-feedback{
+                margin-left: 10rem;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+            }
+            .grid-three--cols , .grid-two--cols{
+                grid-template-columns: 1fr;
+            }
+            /* .grid-two--cols{
+                width: 100rem;
+            } */
+            canvas {
+                width: 100%;
+                height: auto;
+            }
+        }
+        
+        @media (max-width: 690px) {
+            html {
+                font-size: 32%;
+            }
+            .sidebar {
+                padding: 2rem 1rem;
+            }
+            .navbar {
+                flex-direction: column;
+            }
+            .nav-links {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 625px) {
+            html {
+                font-size: 28%;
+            }
+        }
+        
+
+        @media (max-width: 540px) {
+            html {
+                font-size: 26%;
+            }
+        }
+        @media (max-width: 502px) {
+            html {
+                font-size: 24%;
+            }
+        }
+        
+        
+        @media (max-width: 470px) {
+            html {
+                font-size: 22%;
+            }
+        }
+        @media (max-width: 430px) {
+            html {
+                font-size: 18%;
+            }
+            .sidebar {
+                padding: 2rem 1rem;
+            }
+            .navbar {
+                flex-direction: column;
+            }
+            .nav-links {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        </style>
 </head>
 <body>
     <!-- ========== Start navbar ========== -->
@@ -17,9 +160,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="attendance.html">Attendance</a></li>
             <li><a href="progress.html">Progress</a></li>
-            <li><a href="#reports">Projects</a></li>
-            <li><a href="#settings">Salary</a></li>
-            <li><a href="#login">Login</a></li>
+            <li><a href="login.html">Login</a></li>
             <!-- <button id="mode-toggle"><i class="fa-solid fa-toggle-on"></i></button> -->
         </ul>
         <div class="menu-toggle">
@@ -45,7 +186,7 @@
 <!-- ========== End sidebar Section ========== -->
 
 <!-- ========== Start Tasks Section ========== -->
-<section id="task-completion">
+<section id="task-completion" class="task-completion">
     <div class="task">
     <h2>Task Completion Rate</h2>
     <!-- <div class="progress"> -->
@@ -65,7 +206,7 @@
 <!-- ========== End Tasks Section ========== -->
 
 <!-- ========== Start Project Progress - monthly and yearly Section ========== -->
-<section id="project-progress">
+<section id="project-progress" class="project-progress">
     <div class="chart-wrapper">
     <h2>Project Progress</h2>
         <!-- Monthly Project Progress Doughnut Chart -->
@@ -86,7 +227,7 @@
 <!-- ========== End Project Progress - monthly and yearly Section ========== -->
 
 <!-- ========== Start Daily/Weekly/Monthly Goals Section ========== -->
-<section id="goals">
+<section id="goals" class="goals">
     <div class="goals-container">
         <h2>Daily, Weekly, and Monthly Goals</h2>
         <div class="goal">

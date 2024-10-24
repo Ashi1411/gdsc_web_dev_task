@@ -8,6 +8,149 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+@media (width <= 1400px){
+    html{
+        font-size: 50%;
+        /* 1rem = 8.64px */
+    } 
+}
+
+@media (max-width: 1210px) {
+    html {
+        font-size: 45%;
+    }
+    .attendance-record, .hours-leaves, .leave-apply, .attendance-correction {
+        margin-left: 15rem;
+        padding: 1rem;
+    }
+    .grid-two--cols {
+        grid-template-columns: 1fr;
+    }
+    .grid-three--cols {
+        grid-template-columns: 1fr;
+    }
+    .hours-worked{
+        margin-left: 0rem;
+    }
+}
+
+
+@media (max-width:1080px) {
+    html {
+        font-size: 38%;
+    }
+}
+
+@media (max-width:930px) {
+    html {
+        font-size: 36%;
+    }
+}
+@media (max-width: 890px) {
+    html {
+        font-size: 40%;
+    }
+    .navbar {
+        padding: 1rem;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 4rem;
+        right: 0;
+        background-color: #000;
+        width: 100%;
+        padding: 1rem;
+    }
+    .nav-links li {
+        margin: 1rem 0;
+    }
+    .attendance-record, .hours-leaves, .leave-apply, .attendance-correction {
+        margin-left: 0;
+        padding: 1rem;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+    .grid-three--cols {
+        grid-template-columns: 1fr;
+    }
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 690px) {
+    html {
+        font-size: 35%;
+    }
+    .sidebar {
+        padding: 2rem 1rem;
+    }
+    .navbar {
+        flex-direction: column;
+    }
+    .nav-links {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 540px) {
+    html {
+        font-size: 32%;
+    }
+    .sidebar {
+        padding: 2rem 1rem;
+    }
+    .navbar {
+        flex-direction: column;
+    }
+    .nav-links {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 490px) {
+    html {
+        font-size: 28%;
+    }
+    .sidebar {
+        padding: 2rem 1rem;
+    }
+    .navbar {
+        flex-direction: column;
+    }
+    .nav-links {
+        width: 100%;
+        text-align: center;
+    }
+}
+@media (max-width: 430px) {
+    html {
+        font-size: 24%;
+    }
+    .sidebar {
+        padding: 2rem 1rem;
+    }
+    .navbar {
+        flex-direction: column;
+    }
+    .nav-links {
+        width: 100%;
+        text-align: center;
+    }
+}
+</style>
 <body>
 <!-- ========== Start navbar ========== -->
 <nav class="navbar">
@@ -18,9 +161,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="attendance.html">Attendance</a></li>
         <li><a href="progress.html">Progress</a></li>
-        <li><a href="#reports">Projects</a></li>
-        <li><a href="#settings">Salary</a></li>
-        <li><a href="#login">Login</a></li>
+        <li><a href="login.html">Login</a></li>
         <!-- <button id="mode-toggle"><i class="fa-solid fa-toggle-on"></i></button> -->
     </ul>
     <div class="menu-toggle">
@@ -95,7 +236,7 @@
     <div class="hours-worked">
         <h2>Hours Completed</h2>
         <div class="hours-completed">
-        <canvas id="doughnutChart" width="400" height="400"></canvas>
+        <canvas id="doughnutChart"></canvas>
         <div id="attendance-info">
             <p>Hours Worked Today: <span id="hours-worked">8</span> hours</p>
             <p>Remaining Hours: <span id="remaining-hours">0</span> hours</p>
@@ -103,7 +244,7 @@
     </div>
 </div>
 
-<div>
+<div class="leaves-taken">
 <h2 class="leave-summary">Employee Leaves Summary</h2>
     <div class="leaves">
     <div class="leave-card">
@@ -126,7 +267,7 @@
 </div>
 </div>
 
-<div>
+<div class="leaves-sum">
 <h2 class="leave-summary">Leave Distribution</h2>
     <div class="leave-distribution">
         <canvas id="leaveDistributionChart" width="400" height="400"></canvas>
@@ -136,13 +277,6 @@
 </section>
 <!-- ========== End hours, leaves and its distribution completed Section ========== -->
 
-
-<!-- <section>
-    <div class="calander">
-        <h1>Employee Attendance</h1>
-        <div id="attendanceCalendar"></div>
-    </div>
-</section> -->
 
 <!-- ========== Start leave application Section ========== -->
 <div class="leave-apply" id="apply-leave">
@@ -232,7 +366,7 @@
 <!-- ========== End Attendance Correction request Section ========== -->
 
 <!-- ========== Start Footer Section ========== -->
-<footer>
+<footer class="attendance-foot">
     <div class="attendance-footer">
     <div class="footer-content">
         <div class="footer-about">
